@@ -117,6 +117,7 @@ button {
     padding: 5px;
     width: 15%;
     height: 15%;
+    cursor: pointer;
 }
 
 .book-desc-author{
@@ -193,4 +194,22 @@ button {
 #container{
     width:90%;
     margin: 0px auto;
+}
+
+@media only screen and (max-device-width: 980px) {
+
+    #bookdesc{
+        display: grid;
+        grid-template-columns:100%;
+        /*grid-gap: 20px;*/
+        width: 100%;
+        gap: 0rem 2.5rem;
+    
+    } 
+    .buttonSearch{
+        width: 40vw;
+    }
+    .buttonCancel{
+        width: 40vw;
+    }
 }
