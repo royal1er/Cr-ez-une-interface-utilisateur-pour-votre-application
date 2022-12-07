@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<title>Poch'Lib</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-  	</head>
-  	<body>
-		<div id="myBooks">
-			<h1 class="title">Poch'Lib</h1>
+<head>
+	<title>Poch'Lib</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/svg" sizes="32x32" href="./images/logo.svg">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="container">
+	<div id="myBooks">
+		<h1 class="title">Poch'Lib</h1>
+		<div id="section-body">
 			<h2 class="h2">Nouveau Livre</h2>
-			<hr>
-			<div id="content">
-				<h2>Ma poch'liste</h2>
+			<button class="buttonSearch" id="openshowform" onclick="">Ajouter un livre</button>
+		</div>
+		<div id="showform">
+			<form id="searchmybook" action="" method="post" id="searchbook">
+				<div class="field">
+					<label for="name">Titre du livre :</label>
+					<input type="text" class="inputValidation" id="title" name="title"/>
+					<small></small>
+				</div>
+				<div class="field">
+					<label for="email">Auteur :</label>
+					<input type="text" class="inputValidation" id="author" name="author"/>
+					<small></small>
+				</div>
+				<input type="button" class="buttonSearch" name="submit" value="Rechercher" id="opensearch" />
+				<input type="button" class="buttonCancel" name="submit" value="Annuler" id="cancelsearch" />
+			</form>
+		</div>
+		<div id="booklist"> 
+			<div id="showresult">
+				<h3>Résultats de recherche</h3>
 			</div>
 		</div>
-  	</body>
+			<div id="bookdesc">
+			
+			</div>
+		<hr>
+		<div id="content">
+			<h2>Ma poch'liste</h2>
+		</div>
+	</div>
+	<script type="text/javascript" src="index.js" defer></script>
+
+	
+		
+</div>
+</body>
 </html>
