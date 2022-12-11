@@ -196,6 +196,14 @@ button {
     margin: 0px auto;
 }
 
+#showbookmark{
+    display: grid;
+    grid-template-columns:auto 50%;
+    /*grid-gap: 20px;*/
+    width: 100%;
+    gap: 0rem 2.5rem;
+}
+
 @media only screen and (max-device-width: 980px) {
 
     #bookdesc{
