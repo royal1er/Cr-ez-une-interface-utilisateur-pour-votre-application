@@ -110,7 +110,7 @@ if(sessionStorage.length >= 1){
 
 async function showMyBook() {
   let testmybook = document.getElementById("showbookmark");
-  for (let i = 1; i < sessionStorage.length; i++) {
+  for (let i = 0; i < sessionStorage.length; i++) {
 
     while(sessionStorage.getItem(searchmybook) == null){
       searchmybook++
