@@ -90,7 +90,7 @@ async function show(data) {
 
 function getTheLastNumber(){
   var n = 0;
-  for (let i = 1; i < sessionStorage.length; i++) {
+  for (let i = 0; i < sessionStorage.length; i++) {
     var a = sessionStorage.key(i);
     if(a > n){
       n = a;
@@ -158,7 +158,7 @@ async function getTheBook(data) {
       i++;
       console.log(i);
       sessionStorage.setItem(i.toString(),JSON.stringify(finaldata));
-    console.log(Object.keys(sessionStorage).length);
+    console.log(sessionStorage);
     
     }
   })
