@@ -16,15 +16,15 @@
 			<button class="buttonSearch" id="openshowform" onclick="">Ajouter un livre</button>
 		</div>
 		<div id="showform">
-			<form id="searchmybook" action="" method="post" id="searchbook">
+			<form name="myForm" id="searchmybook">
 				<div class="field">
-					<label for="name">Titre du livre :</label>
-					<input type="text" class="inputValidation" id="title" name="title"/>
+					<label>Titre du livre :</label>
+					<input type="text" class="inputValidation" id="title" name="title" required/>
 					<small></small>
 				</div>
 				<div class="field">
-					<label for="email">Auteur :</label>
-					<input type="text" class="inputValidation" id="author" name="author"/>
+					<label>Auteur :</label>
+					<input type="text" class="inputValidation" id="author" name="author" required/>
 					<small></small>
 				</div>
 				<input type="button" class="buttonSearch" name="submit" value="Rechercher" id="opensearch" />

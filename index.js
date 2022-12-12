@@ -15,6 +15,9 @@ openmodalbutton.addEventListener("click", e => {
 /*=========================================*/
 const opensearch = document.getElementById("opensearch")
 opensearch.addEventListener("click", e => {
+  var title = document.getElementById("title");
+  var author = document.getElementById("author");
+  if(title.value != "" && author.value != ""){
     showform.style.display = "none";
     const form = document.getElementById('searchmybook');
     const title = form.elements['title'];
@@ -22,9 +25,11 @@ opensearch.addEventListener("click", e => {
     const author = form.elements['author'];
     let url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title.value}&inauthor:${author.value}&key=AIzaSyCScNTyhRFp2RG8LHd07d6EGq6c16qxcJY`;
     console.log(url);
-    getapi(url);
-    
+    getapi(url); 
     booklist.style.display = "grid";
+  }else{
+    alert("Veuillez remplir les deux champs");
+  }
 });
 
 /*=========================================*/
@@ -86,8 +91,6 @@ async function show(data) {
     getTheBook(data);
 }
 
-/**/
-
 function getTheLastNumber(){
   var n = 0;
   for (let i = 0; i < sessionStorage.length; i++) {
@@ -95,12 +98,9 @@ function getTheLastNumber(){
     if(a > n){
       n = a;
     }
-    //console.log(i);
-    console.log(sessionStorage);
   }
   return n;
 }
-console.log(getTheLastNumber());
 
 
 
@@ -145,21 +145,34 @@ searchmybook++;
 
 }
 
+function verifyBook(data){
+  var found = false;
+  for (let i = 0; i < sessionStorage.length; i++) {
+    this.data = JSON.stringify(data)
+    var isdata = JSON.parse(this.data)
+    var myvar = JSON.parse(sessionStorage.getItem(i));
+    if(myvar != undefined && myvar.id == isdata.id){
+      found = true;
+      break;
+    }
+  } 
+  return found
+}
+
+
 async function getTheBook(data) {
   document.addEventListener("click", (e) => {
     const button = e.target.closest(".test");
     if (button) {
       myalt = button.getAttribute("alt");
-      console.log(myalt);
       finaldata=data.items[myalt];
-      console.log(finaldata);
       i = getTheLastNumber();
-      console.log(i);
       i++;
-      console.log(i);
-      sessionStorage.setItem(i.toString(),JSON.stringify(finaldata));
-    console.log(sessionStorage);
-    
+      if(verifyBook(finaldata) == true){
+        alert("Ce livre a déjà été enregistré");
+      }else{
+        sessionStorage.setItem(i.toString(),JSON.stringify(finaldata));
+      }
     }
   })
   
@@ -171,7 +184,6 @@ function deleteTheBook() {
     if (button) {
       myalt = button.getAttribute("alt");
       indexOfBook = myalt.toString();
-      console.log(indexOfBook);
       sessionStorage.removeItem(indexOfBook);
       window.location.reload();
     }
