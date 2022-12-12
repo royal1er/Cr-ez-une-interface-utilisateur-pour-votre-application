@@ -15,9 +15,11 @@ openmodalbutton.addEventListener("click", e => {
 /*=========================================*/
 const opensearch = document.getElementById("opensearch")
 opensearch.addEventListener("click", e => {
+  var bookdesc = document.getElementById("bookdesc");
   var title = document.getElementById("title");
   var author = document.getElementById("author");
   if(title.value != "" && author.value != ""){
+    bookdesc.innerHTML="";
     showform.style.display = "none";
     const form = document.getElementById('searchmybook');
     const title = form.elements['title'];
@@ -25,7 +27,7 @@ opensearch.addEventListener("click", e => {
     const author = form.elements['author'];
     let url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title.value}&inauthor:${author.value}&key=AIzaSyCScNTyhRFp2RG8LHd07d6EGq6c16qxcJY`;
     console.log(url);
-    getapi(url); 
+    getapi(url);
     booklist.style.display = "grid";
   }else{
     alert("Veuillez remplir les deux champs");
