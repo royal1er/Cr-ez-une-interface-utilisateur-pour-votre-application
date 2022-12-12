@@ -158,7 +158,7 @@ async function getTheBook(data) {
       i++;
       console.log(i);
       sessionStorage.setItem(i.toString(),JSON.stringify(finaldata));
-    console.log(Object.keys(sessionStorage).length);
+    console.log(sessionStorage);
     
     }
   })
