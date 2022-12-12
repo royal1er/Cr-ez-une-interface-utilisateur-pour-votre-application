@@ -204,7 +204,7 @@ button {
     gap: 0rem 2.5rem;
 }
 
-@media only screen and (max-device-width: 980px) {
+@media only screen and (max-width: 786px) {
 
     #bookdesc{
         display: grid;
@@ -214,10 +214,39 @@ button {
         gap: 0rem 2.5rem;
     
     } 
+    #mybookdesc{
+        grid-template-columns:auto 30%;
+    }
+
+    #showbookmark{
+        grid-template-columns:100%;
+    }
     .buttonSearch{
         width: 40vw;
     }
     .buttonCancel{
         width: 40vw;
     }
+    #booklist-title{
+         text-align: center;
+    }
+    #book-desc-img{
+        display: flex;
+        grid-area: book-desc-img;
+        align-self: center;
+        justify-content: center;
+    }
+    #bookmark{
+        display: flex;
+        grid-area: bookmark;
+        align-self: center;
+        justify-content:center;
+    }
+    #bookmark img{
+        width: 30%;
+        height: 30%;
+        cursor: pointer;
+    }
+    
+    
 }
