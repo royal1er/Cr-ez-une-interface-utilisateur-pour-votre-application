@@ -14,4 +14,4 @@ git branch -M main
 
 2. cd Cr-ez-une-interface-utilisateur-pour-votre-application
 
-3. Ouvrir sur un navigateur le ficier "index.html"
+3. Ouvrir sur un navigateur le fichier "index.html"
