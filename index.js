@@ -105,17 +105,17 @@ function getTheLastNumber(){
 }
 
 
-
-if(sessionStorage.length >= 1){
+if(sessionStorage.length >= 2){
   showMyBook();
 }
+
 
 async function showMyBook() {
   let testmybook = document.getElementById("showbookmark");
   for (let i = 0; i < sessionStorage.length; i++) {
 
     while(sessionStorage.getItem(searchmybook) == null){
-      searchmybook++
+      searchmybook++;
     }
     data = sessionStorage.getItem(searchmybook);
     data = JSON.parse(data);
@@ -148,17 +148,17 @@ searchmybook++;
 }
 
 function verifyBook(data){
-  var found = false;
+  var isfound = false;
   for (let i = 0; i < sessionStorage.length; i++) {
     this.data = JSON.stringify(data)
-    var isdata = JSON.parse(this.data)
-    var myvar = JSON.parse(sessionStorage.getItem(i));
-    if(myvar != undefined && myvar.id == isdata.id){
-      found = true;
+    var dataParse = JSON.parse(this.data)
+    var myvarStorage = JSON.parse(sessionStorage.getItem(i));
+    if(myvarStorage != undefined && myvarStorage.id == dataParse.id){
+      isfound = true;
       break;
     }
   } 
-  return found
+  return isfound
 }
 
 

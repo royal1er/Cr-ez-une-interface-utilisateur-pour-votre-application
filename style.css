@@ -27,7 +27,7 @@ body {
 }
 h2{
     text-align: center;
-    font-style: bold;
+    font-weight: bold;
 
 }
 
@@ -155,7 +155,6 @@ button {
 }
 .inputValidation{
     background-color: #fafafa;
-    border:1;
     margin-top: 1rem;
     width: 100%;
     box-shadow:0 0 4px rgba(0,0,0,0.3);
