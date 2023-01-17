@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import "_variable.scss";
 
 body {
     width: 100%;
@@ -52,7 +53,7 @@ button {
     display: none;
     grid-template-areas:
     "showresult showresult";
-    grid-template-columns: auto 100%;
+    grid-template-columns: auto $columnwidth;
     width: 100%;
     margin: 0px auto;
 }
@@ -80,7 +81,7 @@ button {
     "book-desc-author book-desc-author"
     "book-desc-resume book-desc-resume"
     "book-desc-img book-desc-img";
-    background-color: #88888869;
+    background-color: $bookcard-color;
     border-radius: 0.5em;
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -138,13 +139,13 @@ button {
     grid-area: book-desc-img;
     align-self: center;
     justify-content: center;
-}
-#book-desc-img img{
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 200px;
-    height: 200px;
+    img{
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 200px;
+        height: 200px;
+    }
 }
 #showform{
     display:none;
@@ -154,13 +155,13 @@ button {
     margin-top: 1rem;
 }
 .inputValidation{
-    background-color: #fafafa;
+    background-color: $lightgray;
     margin-top: 1rem;
     width: 100%;
     box-shadow:0 0 4px rgba(0,0,0,0.3);
 }
 .buttonSearch{
-    background-color: #648566;
+    background-color: $searchBook;
     border: none;
     color: white;
     width: 15vw;
@@ -176,7 +177,7 @@ button {
     margin-top: 2rem;
 }
 .buttonCancel{
-    background-color: #df4860;
+    background-color: $cancelButton;
     border: none;
     color: white;
     width: 15vw;
@@ -207,7 +208,7 @@ button {
 
     #bookdesc{
         display: grid;
-        grid-template-columns:100%;
+        grid-template-columns:$columnwidth;
         /*grid-gap: 20px;*/
         width: 100%;
         gap: 0rem 2.5rem;
@@ -218,7 +219,7 @@ button {
     }
 
     #showbookmark{
-        grid-template-columns:100%;
+        grid-template-columns:$columnwidth;
     }
     .buttonSearch{
         width: 40vw;

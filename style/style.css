@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Alata", sans-serif;
+  margin: 0 auto;
+}
+
+/*Occuper tout le contenue de la page*/
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.title {
+  position: relative;
+  width: 100%;
+  height: 5vh;
+  background-color: rgba(121, 129, 144, 0.228);
+  text-align: center;
+  box-shadow: 0px 5px 5px gray;
+  margin-bottom: 2.5vh;
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+#section-body {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  display: grid;
+  place-items: center;
+}
+
+button {
+  background-color: lightblue;
+  color: black;
+  font-size: 25px;
+  margin: auto;
+}
+
+#booklist {
+  grid-area: booklist;
+  display: none;
+  grid-template-areas: "showresult showresult";
+  grid-template-columns: auto 100%;
+  width: 100%;
+  margin: 0px auto;
+}
+
+#showresult {
+  grid-area: showresult;
+  align-self: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+#bookdesc {
+  display: grid;
+  grid-template-columns: auto 50%;
+  /*grid-gap: 20px;*/
+  width: 100%;
+  gap: 0rem 2.5rem;
+}
+
+#mybookdesc {
+  display: grid;
+  grid-template-areas: "booklist-title bookmark" "book-id book-id" "book-desc-author book-desc-author" "book-desc-resume book-desc-resume" "book-desc-img book-desc-img";
+  background-color: rgba(136, 136, 136, 0.4117647059);
+  border-radius: 0.5em;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 0rem 2rem 1rem 2rem;
+}
+
+#book-id {
+  grid-area: book-id;
+  align-self: center;
+  font-style: italic;
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+
+#booklist-title {
+  grid-area: booklist-title;
+  align-self: center;
+  font-weight: bold;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+#bookmark {
+  display: flex;
+  grid-area: bookmark;
+  align-self: center;
+  align-self: flex-end;
+  justify-content: right;
+}
+
+#bookmark img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 15%;
+  height: 15%;
+  cursor: pointer;
+}
+
+.book-desc-author {
+  grid-area: book-desc-author;
+  align-self: center;
+  padding-bottom: 1em;
+}
+
+#book-desc-resume {
+  grid-area: book-desc-resume;
+  align-self: center;
+  padding-bottom: 1em;
+  color: #6c5f5f;
+}
+
+#book-desc-img {
+  display: flex;
+  grid-area: book-desc-img;
+  align-self: center;
+  justify-content: center;
+}
+#book-desc-img img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+}
+
+#showform {
+  display: none;
+}
+
+.field {
+  margin-top: 1rem;
+}
+
+.inputValidation {
+  background-color: #fafafa;
+  margin-top: 1rem;
+  width: 100%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.buttonSearch {
+  background-color: #648566;
+  border: none;
+  color: white;
+  width: 15vw;
+  height: 5vh;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  display: list-item;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.buttonCancel {
+  background-color: #df4860;
+  border: none;
+  color: white;
+  width: 15vw;
+  height: 5vh;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  display: list-item;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#container {
+  width: 90%;
+  margin: 0px auto;
+}
+
+#showbookmark {
+  display: grid;
+  grid-template-columns: auto 50%;
+  /*grid-gap: 20px;*/
+  width: 100%;
+  gap: 0rem 2.5rem;
+}
+
+@media only screen and (max-width: 786px) {
+  #bookdesc {
+    display: grid;
+    grid-template-columns: 100%;
+    /*grid-gap: 20px;*/
+    width: 100%;
+    gap: 0rem 2.5rem;
+  }
+  #mybookdesc {
+    grid-template-columns: auto 30%;
+  }
+  #showbookmark {
+    grid-template-columns: 100%;
+  }
+  .buttonSearch {
+    width: 40vw;
+  }
+  .buttonCancel {
+    width: 40vw;
+  }
+  #booklist-title {
+    text-align: center;
+  }
+  #book-desc-img {
+    display: flex;
+    grid-area: book-desc-img;
+    align-self: center;
+    justify-content: center;
+  }
+  #bookmark {
+    display: flex;
+    grid-area: bookmark;
+    align-self: center;
+    justify-content: center;
+  }
+  #bookmark img {
+    width: 30%;
+    height: 30%;
+    cursor: pointer;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -105,7 +105,7 @@ function getTheLastNumber(){
 }
 
 
-if(sessionStorage.length >= 2){
+if(sessionStorage.length >= 1){
   showMyBook();
 }
 
