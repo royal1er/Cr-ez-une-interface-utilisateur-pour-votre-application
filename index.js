@@ -174,6 +174,7 @@ async function getTheBook(data) {
         alert("Ce livre a déjà été enregistré");
       }else{
         sessionStorage.setItem(i.toString(),JSON.stringify(finaldata));
+        showMyBook();
       }
     }
   })
