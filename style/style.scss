@@ -67,7 +67,7 @@ button {
 
 #bookdesc{
     display: grid;
-    grid-template-columns:auto 50%;
+    grid-template-columns:$columnwidth;
     /*grid-gap: 20px;*/
     width: 100%;
     gap: 0rem 2.5rem;
@@ -108,16 +108,15 @@ button {
     display: flex;
     grid-area: bookmark;
     align-self: center;
-    align-self:flex-end;
-    justify-content:right;
+    justify-content:center;
 }
 
 #bookmark img{
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    width: 15%;
-    height: 15%;
+    width: 30%;
+    height: 30%;
     cursor: pointer;
 }
 
@@ -164,7 +163,7 @@ button {
     background-color: $searchBook;
     border: none;
     color: white;
-    width: 15vw;
+    width: 40vw;
     height: 5vh;
     text-align: center;
     text-decoration: none;
@@ -180,7 +179,7 @@ button {
     background-color: $cancelButton;
     border: none;
     color: white;
-    width: 15vw;
+    width: 45vw;
     height: 5vh;
     text-align: center;
     text-decoration: none;
@@ -198,17 +197,17 @@ button {
 
 #showbookmark{
     display: grid;
-    grid-template-columns:auto 50%;
+    grid-template-columns:$columnwidth;    
     /*grid-gap: 20px;*/
     width: 100%;
     gap: 0rem 2.5rem;
 }
 
-@media only screen and (max-width: 786px) {
+@media only screen and (min-width: 786px) {
 
     #bookdesc{
         display: grid;
-        grid-template-columns:$columnwidth;
+        grid-template-columns:auto 50%;
         /*grid-gap: 20px;*/
         width: 100%;
         gap: 0rem 2.5rem;
@@ -219,13 +218,13 @@ button {
     }
 
     #showbookmark{
-        grid-template-columns:$columnwidth;
+        grid-template-columns:auto 50%;
     }
     .buttonSearch{
-        width: 40vw;
+        width: 15vw;
     }
     .buttonCancel{
-        width: 40vw;
+        width: 15vw;
     }
     #booklist-title{
          text-align: center;
@@ -240,11 +239,12 @@ button {
         display: flex;
         grid-area: bookmark;
         align-self: center;
-        justify-content:center;
+        align-self:flex-end;
+        justify-content:right;
     }
     #bookmark img{
-        width: 30%;
-        height: 30%;
+        width: 15%;
+        height: 15%;
         cursor: pointer;
     }
     

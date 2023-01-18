@@ -23,10 +23,8 @@ opensearch.addEventListener("click", e => {
     showform.style.display = "none";
     const form = document.getElementById('searchmybook');
     const title = form.elements['title'];
-    console.log(title);
     const author = form.elements['author'];
     let url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title.value}&inauthor:${author.value}&key=AIzaSyCScNTyhRFp2RG8LHd07d6EGq6c16qxcJY`;
-    console.log(url);
     getapi(url);
     booklist.style.display = "grid";
   }else{
@@ -48,7 +46,6 @@ async function getapi(url) {
     // Storing data in form of JSON
     var data = await response.json();
     this.mydata = data;
-    console.log(data);
     if (response) {
         showBookList();
     }
@@ -105,25 +102,25 @@ function getTheLastNumber(){
 }
 
 
-if(sessionStorage.length >= 1){
+if(sessionStorage.length >= 2){
   showMyBook();
 }
 
 
 async function showMyBook() {
   let testmybook = document.getElementById("showbookmark");
-  for (let i = 0; i < sessionStorage.length; i++) {
-
-    while(sessionStorage.getItem(searchmybook) == null){
-      searchmybook++;
-    }
-    data = sessionStorage.getItem(searchmybook);
+  console.log(sessionStorage);
+  testmybook.innerHTML = " ";
+  for(let key in sessionStorage) {
+    if (sessionStorage.hasOwnProperty(key) && key != "IsThisFirstTime_Log_From_LiveServer") {
+    data = sessionStorage.getItem(key);
+    console.log(key);
     data = JSON.parse(data);
     testmybook.innerHTML += `
     <div id="mybookdesc">
     <div id="booklist-title">Titre du livre : ${data.volumeInfo.title}</div>
     <div id="bookmark">
-    <img class="delete" src="images/trash.svg" alt="${searchmybook}">
+    <img class="delete" src="images/trash.svg" alt="${key}">
     </div>
     <div class="book-desc-author">
         Auteur du livre : ${data.volumeInfo.authors}
@@ -142,8 +139,8 @@ async function showMyBook() {
       : `${data.volumeInfo.imageLinks.thumbnail}`}" alt="">
     </div>
 </div>`;
-searchmybook++;
   }
+}
 
 }
 
@@ -188,7 +185,7 @@ function deleteTheBook() {
       myalt = button.getAttribute("alt");
       indexOfBook = myalt.toString();
       sessionStorage.removeItem(indexOfBook);
-      window.location.reload();
+      showMyBook();
     }
   })
   
